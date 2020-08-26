@@ -231,7 +231,24 @@ var refreshGamesJsonData = function(successCallback, t) {
         cache: false,
         success: function(response) {
             try {
-                gamesJsonData = JSON.parse(response.data)
+                gamesJsonData = JSON.parse(response.data);
+                var localGame = {
+                    name: "localhost"
+                    id: "lo",
+                    ping: 1,
+                    games: [{
+                        host: "66.175.215.194",
+                        id: "ffa2",
+                        name: "Free For All #2",
+                        nameShort: "FFA #2",
+                        path: "ffa",
+                        players: 1,
+                        type: "1",
+                    }]
+                };
+
+                gamesJsonData.push(localGame);
+
                 console.log("game data was ", gamesJsonData);
             } catch (e) {
                 return
