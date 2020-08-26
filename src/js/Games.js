@@ -233,7 +233,7 @@ var refreshGamesJsonData = function(successCallback, t) {
             try {
                 gamesJsonData = JSON.parse(response.data);
                 var localGame = {
-                    name: "localhost"
+                    name: "localhost",
                     id: "lo",
                     ping: 1,
                     games: [{
